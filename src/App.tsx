@@ -67,20 +67,42 @@ const App: React.FC = () => {
 
   if (yesPressed) {
     return (
-      <div className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden bg-pink-50">
+      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 relative overflow-hidden bg-gradient-to-br from-[#ff758c] via-[#ff7eb3] to-[#ffa6c1]">
         <FloatingHearts />
-        <div className="z-10 bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-2xl border border-pink-100 text-center animate-bounce-subtle max-w-sm w-full">
-          <img 
-            src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHp1eHRueWlzNHR2OHp6ZWZ6MmtuNXB6Nnd6bTZ6NHR6ZWZ6MmtuJmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/MDJ9IbxxvDUQM/giphy.gif" 
-            alt="Cute Cat Hug" 
-            className="w-48 h-48 mx-auto rounded-2xl mb-6 shadow-lg"
-          />
-          <h1 className="text-4xl font-bold text-pink-600 mb-2 drop-shadow-sm">Yay! 💖</h1>
-          <p className="text-pink-500 text-xl font-medium">I knew you'd say yes!</p>
-          <div className="mt-6 flex justify-center gap-2">
-            <Sparkles className="text-yellow-400 animate-pulse" />
-            <Heart className="text-pink-500 fill-pink-500 animate-ping" />
-            <Sparkles className="text-yellow-400 animate-pulse" />
+        <div className="z-10 bg-white/30 backdrop-blur-xl p-8 rounded-[2rem] shadow-2xl border border-white/40 text-center animate-bounce-subtle max-w-4xl w-full mx-auto">
+          
+          <div className="flex flex-col md:flex-row gap-6 justify-center items-center mb-8">
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-64 h-64 object-cover rounded-2xl shadow-xl border-4 border-white/50"
+            >
+              <source src="/gif-valentine.mp4" type="video/mp4" />
+            </video>
+            <video 
+              autoPlay 
+              loop 
+              muted 
+              playsInline
+              className="w-64 h-64 object-cover rounded-2xl shadow-xl border-4 border-white/50"
+            >
+              <source src="/gif-valentine-2.mp4" type="video/mp4" />
+            </video>
+          </div>
+
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-md font-['Dancing_Script']">
+            Yay! 💖
+          </h1>
+          <p className="text-white text-2xl md:text-3xl font-medium font-['Playfair_Display']">
+            I knew you'd say yes!
+          </p>
+          
+          <div className="mt-8 flex justify-center gap-4">
+            <Sparkles className="w-8 h-8 text-yellow-300 animate-pulse" />
+            <Heart className="w-10 h-10 text-red-500 fill-red-500 animate-ping" />
+            <Sparkles className="w-8 h-8 text-yellow-300 animate-pulse" />
           </div>
         </div>
       </div>
@@ -89,27 +111,27 @@ const App: React.FC = () => {
 
   return (
     <div 
-      className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden transition-colors duration-500"
+      className="min-h-screen w-full flex items-center justify-center p-4 relative overflow-hidden transition-colors duration-500 bg-gradient-to-br from-[#ff9a9e] via-[#fad0c4] to-[#fad0c4]"
       onMouseMove={handleMouseMove}
     >
       <FloatingHearts />
       
       <div 
         ref={cardRef}
-        className="z-10 bg-white/90 backdrop-blur-sm p-10 rounded-3xl shadow-2xl border border-white/50 text-center max-w-sm w-full relative min-h-[400px] flex flex-col items-center justify-center"
+        className="z-10 bg-white/30 backdrop-blur-xl p-12 rounded-[2.5rem] shadow-2xl border border-white/60 text-center max-w-xl w-full relative min-h-[500px] flex flex-col items-center justify-center"
       >
         <div className="mb-8 animate-bounce">
-          <Heart className="w-20 h-20 text-pink-500 fill-pink-500 drop-shadow-lg" />
+          <Heart className="w-24 h-24 text-red-500 fill-red-500 drop-shadow-xl" />
         </div>
 
-        <h1 className="text-3xl font-bold text-gray-800 mb-8 leading-tight">
-          Will you be my Valentine?
+        <h1 className="text-4xl md:text-6xl font-bold text-gray-800 mb-10 leading-tight font-['Dancing_Script'] drop-shadow-sm">
+          Pratyush will you be my valentine ??
         </h1>
 
-        <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full relative min-h-[100px]">
+        <div className="flex flex-col sm:flex-row gap-6 items-center justify-center w-full relative min-h-[120px]">
           <button
             onClick={handleYesClick}
-            className="px-10 py-4 bg-pink-500 hover:bg-pink-600 text-black rounded-full font-bold text-2xl shadow-lg hover:shadow-pink-200 transition-all duration-300 transform hover:scale-110 active:scale-95 z-20"
+            className="px-12 py-4 bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white rounded-full font-bold text-2xl shadow-xl hover:shadow-pink-300/50 transition-all duration-300 transform hover:scale-110 active:scale-95 z-20 font-['Playfair_Display'] tracking-wide"
           >
             Yes! 💖
           </button>
@@ -123,14 +145,14 @@ const App: React.FC = () => {
               top: `${noButtonPos.y}px`,
               transition: 'all 0.2s ease-out',
             }}
-            className="px-10 py-4 bg-gray-100 hover:bg-gray-200 text-black rounded-full font-bold text-2xl border border-gray-200 transition-colors z-20 whitespace-nowrap"
+            className="px-12 py-4 bg-white/80 hover:bg-white text-gray-700 rounded-full font-bold text-2xl border-2 border-white shadow-lg transition-all z-20 whitespace-nowrap font-['Playfair_Display'] backdrop-blur-sm"
           >
-            No {noCount > 0 && <span className="text-sm ml-1 opacity-60">Wait...</span>}
+            No {noCount > 0 && <span className="text-sm ml-1 opacity-60 font-sans">Wait...</span>}
           </button>
         </div>
 
         {noCount > 0 && (
-          <p className="mt-12 text-sm text-gray-400 italic animate-fade-in">
+          <p className="mt-12 text-zinc-600 text-lg italic animate-fade-in font-['Playfair_Display']">
             No seems a bit shy 🙈
           </p>
         )}
