@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect, useCallback } from 'react';
-import { Heart, HeartCrack, Sparkles } from 'lucide-react';
+import { Heart, Sparkles } from 'lucide-react';
 import FloatingHearts from './components/FloatingHearts';
 import { triggerHeartBurst } from './utils/confetti';
 
@@ -109,7 +109,7 @@ const App: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 items-center justify-center w-full relative min-h-[100px]">
           <button
             onClick={handleYesClick}
-            className="px-8 py-3 bg-pink-500 hover:bg-pink-600 text-white rounded-full font-bold text-lg shadow-lg hover:shadow-pink-200 transition-all duration-300 transform hover:scale-110 active:scale-95 z-20"
+            className="px-10 py-4 bg-pink-500 hover:bg-pink-600 text-black rounded-full font-bold text-2xl shadow-lg hover:shadow-pink-200 transition-all duration-300 transform hover:scale-110 active:scale-95 z-20"
           >
             Yes! 💖
           </button>
@@ -123,7 +123,7 @@ const App: React.FC = () => {
               top: `${noButtonPos.y}px`,
               transition: 'all 0.2s ease-out',
             }}
-            className="px-8 py-3 bg-gray-100 hover:bg-gray-200 text-gray-500 rounded-full font-medium text-lg border border-gray-200 transition-colors z-20 whitespace-nowrap"
+            className="px-10 py-4 bg-gray-100 hover:bg-gray-200 text-black rounded-full font-bold text-2xl border border-gray-200 transition-colors z-20 whitespace-nowrap"
           >
             No {noCount > 0 && <span className="text-sm ml-1 opacity-60">Wait...</span>}
           </button>
