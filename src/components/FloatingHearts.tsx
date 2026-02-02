@@ -1,18 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 const FloatingHearts: React.FC = () => {
-  const [hearts, setHearts] = useState<{ id: number; left: string; duration: string; size: string; delay: string }[]>([]);
-
-  useEffect(() => {
-    const newHearts = Array.from({ length: 20 }).map((_, i) => ({
+  const [hearts] = useState(() => 
+    Array.from({ length: 20 }).map((_, i) => ({
       id: i,
       left: `${Math.random() * 100}%`,
       duration: `${6 + Math.random() * 8}s`,
       size: `${15 + Math.random() * 25}px`,
       delay: `${-Math.random() * 10}s`,
-    }));
-    setHearts(newHearts);
-  }, []);
+    }))
+  );
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden z-0">
@@ -24,7 +21,7 @@ const FloatingHearts: React.FC = () => {
             left: heart.left,
             width: heart.size,
             height: heart.size,
-            //@ts-ignore
+            //@ts-expect-error - Custom CSS property
             '--duration': heart.duration,
             animationDelay: heart.delay,
           }}
